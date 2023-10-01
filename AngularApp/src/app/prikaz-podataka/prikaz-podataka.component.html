@@ -1,0 +1,177 @@
+<!--<label>{{broj$|async}}</label>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="veliki">
+  <div id="lijevi">
+    <div id="naziv"><img src="assets/slike/logo_terrarium3.png" style="width: 73%;height: 80%;margin: auto;margin-top: 5%;"> </div>
+    <h6 class="stavke" (click)="idi_na_pocetna()">Početna</h6>
+    <h6 class="stavke" (click)="idi_na_analizu()">Analiza</h6>
+    <h6 class="stavke">Profil</h6>
+    <h6 class="stavke">Postavke</h6>
+  </div>
+
+  <div id="sredisnji" >
+    <div id="gornjiDiv">
+
+
+
+      <!-- <h1 [hidden]="upozorenje==false">UPOZORENJE!</h1>-->
+      <h1>Dobro došli, Luna</h1>
+      <!--<h3>Pon 12 August 2023</h3>-->
+      <h3>{{datum | date:"mediumDate"}} </h3>
+    </div>
+    <div id="DivZaPoruke">
+      <div [hidden]="humidityValue < 75" class="warning-message">
+        <h1 id="upozorenje">Upozorenje: Vlaga je previsoka!</h1>
+      </div>
+      <div [hidden]="temperatureValue < 31" class="warning-message">
+        <h1 id="upozorenje1">Upozorenje: Temperatura je previsoka!</h1>
+      </div>
+    </div>
+    <div id="kartica" [hidden]="analiza==true">
+      <div id="naslovKartice" >
+        <div id="slikaDiv">
+          <img src="assets/slike/biljka.png" id="slika">
+        </div>
+
+        <div id="tekst">
+          <h2 style="margin-bottom: 0;margin-top: 1%;">Terarijum 1</h2>
+          <p style="margin-top: 0;">Amazonska prašuma</p>
+        </div>
+        <div id="dugmad">
+          <button class="dugmad" (click)="unactivateDiode()" [hidden]="diodaValue==false">
+            <img src="assets/slike/lightbulb.png" class="svjetlo">
+          </button>
+          <button class="dugmad" (click)="activateDiode()" [hidden]="diodaValue==true">
+            <img src="assets/slike/lightbulb(1).png" class="svjetlo">
+          </button>
+        </div>
+
+
+      </div>
+      <div id="prikazPodataka">
+        <div id="temperatura">
+          <img src="assets/slike/temperature.png" style="width: 40%;">
+
+          <h3> {{ temperature$ | async }} °C</h3>
+          <h3 class="temp_humidity">Temperatura</h3>
+
+
+
+          <div class="progress"
+               [style.background-color]="
+      temperatureValue > 31
+        ? '#f38d9b'
+        : temperatureValue > 30
+        ? '#f3cf95'
+        : '#81be82'
+    ">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              [style.width]="temperatureValue+ '%'"
+              [style.background-color]="
+      temperatureValue > 31
+        ? '#f60223'
+        : temperatureValue > 30
+        ? '#f59f11'
+        : '#1a5d1b'
+    "
+
+              [attr.aria-valuenow]="temperatureValue"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <!-- aria-valuenow="{{ temperature }}"-->
+              <!--style="background-color: #1a5d1b;"-->
+              {{ temperatureValue }}°C
+            </div>
+          </div>
+
+
+
+
+
+        </div>
+
+        <div id="vlaznost">
+          <img src="assets/slike/humidity.png" style="width: 40%;">
+          <h3> {{ humidity$ | async }} %</h3>
+          <h3 class="temp_humidity">Vlažnost</h3>
+
+
+          <div class="progress"
+               [style.background-color]="
+      humidityValue > 74
+         ? '#f38d9b'
+        : humidityValue > 65
+        ? '#f3cf95'
+        : '#81be82'
+    ">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              [style.width]="humidityValue+ '%'"
+              [style.background-color]="
+      humidityValue > 74
+        ? '#f60223'
+        : humidityValue > 65
+        ? '#f59f11'
+        : '#1a5d1b'
+    "
+
+              [attr.aria-valuenow]="humidityValue"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <!-- aria-valuenow="{{ temperature }}"-->
+              <!--style="background-color: #1a5d1b;"-->
+              {{ humidityValue }}%
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div id="kartica1" [hidden]="analiza==false">
+      <h3 class="naslov_line_charta">Line chart za prikaz promjene temperature</h3>
+      <div class="chart-container">
+        <canvas id="temperatureChart"></canvas>
+      </div>
+      <h3 class="naslov_line_charta">Line chart za prikaz promjene vlaznosti</h3>
+      <div class="chart-container">
+        <canvas id="humidityChart"></canvas>
+      </div>
+
+      <h3 class="naslov_line_charta">Bar chart za prikaz promjene temperature</h3>
+      <div class="chart-container">
+        <canvas id="temperatureBarChart" ></canvas>
+      </div>
+
+      <h3 class="naslov_line_charta">Bar chart za prikaz promjene vlažnosti</h3>
+      <div class="chart-container">
+        <canvas id="humidityBarChart" ></canvas>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

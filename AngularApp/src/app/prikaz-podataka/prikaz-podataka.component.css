@@ -1,0 +1,203 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+.card {
+  width: 50%;
+  margin: auto;
+  background-color: #f0f8ea; /* Svijetlozeleno pozadina za karticu */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.5); /* Zelena sjena */
+}
+
+.data-container {
+  margin-top: 10px;
+}
+#veliki{
+  width: 100%;
+  min-height: 100vh; /* Minimalna visina ekrana */
+  height: auto;
+  display: flex;
+}
+#sredisnji,#sredisnji1{
+  width: 75%;
+  background-color: #9eb79e;
+  padding-top: 2%;
+  margin-left: 25%;
+}
+#gornjiDiv{
+  margin-left: 10%;
+  margin-right: 8%;
+  padding-top: 2%;
+  padding-bottom: 3%;
+}
+#DivZaPoruke{
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 1%;
+}
+#lijevi,#desni{
+  width: 25%;
+  background-color: #0f650f;
+  position: fixed;
+  height: 1000px;
+}
+#lijevi{
+  text-align: center;
+}
+h6.stavke{
+  padding: 10%;
+  text-decoration: none;
+  font-size: large;
+  font-weight: bold;
+  content: none;
+  margin: 0;
+  cursor: pointer;
+}
+h6.stavke:hover{
+  background-color: #237a23;
+}
+#kartica,#kartica1{
+  width: 75%;
+  margin: auto;
+  margin-bottom: 3%;
+  background-color: #deeade;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  padding: 3%;
+}
+#slikaBiljke{
+  width: 100%;
+  height: fit-content;
+}
+#prikazPodataka,#prikazPodataka1{
+  width: 100%;
+  display: flex;
+}
+#naslovKartice,#naslovKartice1{
+  display: flex;
+  padding-bottom: 3%;
+  margin-left: 7%;
+}
+#slikaDiv,#slikaDiv1{
+  width: 12%;
+
+}
+#tekst,#tekst1{
+  width: 100%;
+}
+#pozadinaSlika{
+  width: 20%;
+  transform: rotate(180deg);
+}
+#slika,#slika1{
+  width: 90%;
+  border-radius: 50%;
+}
+#temperatura,#phVrijednost,#vlaznost,#temperatura1,#vlaznost1{
+  width: 30%;
+  border: 1px solid #a8a8a8;
+  border-radius: 10%;
+  margin: auto;
+  padding: 3%;
+  text-align: center;
+}
+#naziv,#naziv1{
+  width: 100%;
+  height: 190px;
+}
+
+
+.temp_humidity{
+  color: #6b6666;
+}
+.chart-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#temperatureChart,
+#humidityChart,#temperatureBarChart,#humidityBarChart {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.naslov_line_charta{
+  margin-left: 10%;
+}
+.warning-message {
+  background-color: red;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+#upozorenje,#upozorenje1 {
+  animation: blink 2s linear infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+#dugmad{
+  width: 40%;
+
+}
+.dugmad
+{
+  border-radius: 10px;
+  margin-left: 40%;
+  background-color: #deeade;
+}
+.svjetlo{
+  width: 50px;
+}
+
+
+
+
+
+#okolo{
+  background-color: red;
+  padding: 5%;
+  width: 50%;
+}
+#unutra{
+  padding: 1%;
+  background-color: blueviolet;
+  width: 50%;
+}
+
+
+
+.progress {
+  width: 100%;
+  height: 30px;
+  background-color: #7ea878;
+  border-radius: 15px 15px ; /* Postavlja zaobljene gornje ivice */
+  overflow: hidden; /* Skriva sadržaj izvan granica */
+}
+
+.progress-bar {
+  height: 100%;
+  color: #fcfcfc;
+  text-align: center;
+  line-height: 30px;
+  transition: width 0.5s;
+  border-radius:  15px 15px; /* Postavlja zaobljene donje ivice */
+}
+
+
+
+
+
+
+
+
+
+
